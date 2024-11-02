@@ -10,10 +10,10 @@ class Clan extends Model
     protected $table = 'clanovi';
     use HasFactory;
 
-    protected $fillable = ['ime', 'prezime','email','tim_id'];
+    protected $fillable = ['ime', 'prezime','email'];
 
-    public function tim()
+    public function timovi()
     {
-        return $this->belongsTo(Tim::class);
+        return $this->belongsToMany(Tim::class, 'tim_clan');
     }
 }

@@ -11,20 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dogadjaj_tim', function (Blueprint $table) {
-            $table->unsignedBigInteger('dogadjaj_id');
+        Schema::create('tim_clan', function (Blueprint $table) {
             $table->unsignedBigInteger('tim_id');
-            $table->integer('score')->default(0);
-            $table->timestamps();
-            $table->primary(['dogadjaj_id', 'tim_id']);
-            $table->foreign('dogadjaj_id')->references('id')->on('dogadjaji')->onDelete('cascade');
+            $table->unsignedBigInteger('clan_id');
+
+            
+            $table->primary(['tim_id', 'clan_id']);
+
+            
             $table->foreign('tim_id')->references('id')->on('timovi')->onDelete('cascade');
+            $table->foreign('clan_id')->references('id')->on('clanovi')->onDelete('cascade');
         });
     }
 
-   
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('dogadjaj_tim');
+        Schema::dropIfExists('tim_clan');
     }
 };

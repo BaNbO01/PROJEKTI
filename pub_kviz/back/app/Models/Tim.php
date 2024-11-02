@@ -14,7 +14,7 @@ class Tim extends Model
 
     public function clanovi()
     {
-        return $this->hasMany(Clan::class);
+        return $this->belongsToMany(Clan::class, 'tim_clan');
     }
 
     public function dogadjaji()

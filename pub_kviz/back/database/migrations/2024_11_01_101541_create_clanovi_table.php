@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('clanovi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tim_id')->constrained("timovi")->onDelete('cascade');
             $table->string('ime');
             $table->string("prezime");
             $table->string('email')->nullable();

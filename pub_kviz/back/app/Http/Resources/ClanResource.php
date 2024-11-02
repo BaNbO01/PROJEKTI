@@ -14,7 +14,6 @@ class ClanResource extends JsonResource
             'ime' => $this->ime,
             'prezime' => $this->prezime,
             'email' => $this->email,
-            'tim_id' => $this->tim_id,
         ];
     }
 }

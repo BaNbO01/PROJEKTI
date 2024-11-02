@@ -9,8 +9,13 @@ class ClanSeeder extends Seeder
 {
     public function run()
     {
-        Tim::all()->each(function ($tim) {
-            Clan::factory()->count(5)->create(['tim_id' => $tim->id]);
+        $timovi = Tim::all();
+
+        
+        Clan::factory()->count(20)->create()->each(function ($clan) use ($timovi) {
+            $clan->timovi()->attach(
+                $timovi->random(rand(1, 3))->pluck('id')->toArray()
+            );
         });
     }
 }

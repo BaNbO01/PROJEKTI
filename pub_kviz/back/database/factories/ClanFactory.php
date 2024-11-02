@@ -14,7 +14,6 @@ class ClanFactory extends Factory
             'ime' => $this->faker->firstName,
             'prezime' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail,
-            'tim_id' => null, // Ovaj atribut će biti popunjen u seeder-u
         ];
     }
 }

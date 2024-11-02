@@ -13,7 +13,7 @@ class SezonaResource extends JsonResource
             'id' => $this->id,
             'pocetak' => $this->pocetak,
             'kraj' => $this->kraj,
-            'dogadjaji' => DogadjajResource::collection($this->dogadjaji), // Koristimo DogadjajResource
+            'dogadjaji' => DogadjajResource::collection($this->dogadjaji), 
         ];
     }
 }
